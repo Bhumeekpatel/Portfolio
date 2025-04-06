@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff5722; 
+    --secondary-color: #00bcd4;
+    --accent-color: #4caf50; 
+    --text-color: #f1f1f1; 
+    --background-color: #121212;
+    --hover-color: #6200ea; 
+    --font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(45deg, #2b2d42, #8d2a2a, #f2872f, #1d3557);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    transition: background 0.3s ease;
+    padding-top: 70px;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    position: inherit;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: var(--background-color);
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--hover-color);
+}
+
+section {
+    padding: 80px 30px;
+    margin: 60px 0;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+section p {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#skills ul li {
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+#skills ul li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.parallax {
+    background-image: url('path/to/your/image.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    background: linear-gradient(135deg, #333333, #222222);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.testimonial {
+    background: rgba(30, 30, 30, 0.8);
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    section {
+        padding: 60px 20px;
+        margin: 50px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        padding: 40px 15px;
+        margin: 40px 0;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+}
+
+#contact {
+    padding: 40px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#contact p {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin: 15px 0;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.contact-list i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.contact-list a:hover i {
+    color: var(--hover-color);
+}
